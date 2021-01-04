@@ -5,6 +5,8 @@ const path = require('path');
 //imports ApolloServer
 const { ApolloServer }=require('apollo-server-express');
 
+const { authMiddleware }=require('./utils/auth');
+
 
 //import typeDefs and resolvers
 const { typeDefs, resolvers }=require('./schemas');
@@ -20,7 +22,8 @@ const app = express();
 
 const server=new ApolloServer({
   typeDefs,
-  resolvers
+  resolvers,
+  context: authMiddleware
 });
 
 //integrate Apollo server with Express application as middleware
