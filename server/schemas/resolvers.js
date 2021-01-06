@@ -15,17 +15,17 @@ const resolvers={
             }
             throw new AuthenticationError('you must be logged in');
         },
-       users: async()=>{
-           return User.find()
-           .select('-__v -password')
-           .populate('books');
+    //    users: async()=>{
+    //        return User.find()
+    //        .select('-__v -password')
+    //        .populate('books');
             
-        },
-        user: async(parent, { username })=>{
-            return User.findOne({ username })
-            .select('-__v -password')
-            .populate('books')
-        }
+    //     },
+    //     user: async(parent, { username })=>{
+    //         return User.findOne({ username })
+    //         .select('-__v -password')
+    //         .populate('books')
+    //     }
 
     },
 
@@ -54,27 +54,27 @@ const resolvers={
         },
 
        
-        saveBook: async(parent, { input }, context)=>{
+        saveBook: async(parent, args, context)=>{
             if(context.user){
-                const updatedUser=await User.findOneAndUpdate(
+                const updatedBook=await User.findOneAndUpdate(
                     {_id: context.user._id },
-                    { $addToSet: { savedBooks: input } },
+                    { $addToSet: { savedBooks: bookData } },
                     { new: true }
                 ).populate('books');
 
-                return updatedUser;
+                return updatedBook;
             }
             throw new AuthenticationError('you must be logged in')
         },
 
         removeBook: async(parent, args, context)=>{
             if(context.user){
-                const updatedUser=await User.findOneAndUpdate(
+                const updatedBook=await User.findOneAndUpdate(
                     { _id: context.user._id },
                     { $pull: { savedbooks: { bookId: args.bookId } } },
                     { new: true }
                 );
-                return updatedUser;
+                return updatedBook;
             }
 
             throw new AuthenticationError('You must be logged in')
