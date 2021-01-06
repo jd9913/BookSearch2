@@ -6,11 +6,14 @@ import { searchGoogleBooks } from '../utils/API';
 import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
 import { SAVE_BOOK } from '../utils/mutations';
 import { useMutation } from '@apollo/react-hooks';
+import SavedBooks from './SavedBooks';
 
 const SearchBooks = () => {
   const [saveBook, { error }]= useMutation(SAVE_BOOK);
+
   // create state for holding returned google api data
   const [searchedBooks, setSearchedBooks] = useState([]);
+
   // create state for holding our search field data
   const [searchInput, setSearchInput] = useState('');
 
@@ -68,8 +71,8 @@ const SearchBooks = () => {
     }
 
     try {
-      const { data } = await saveBook({
-        variables: { input: bookToSave }
+      const { bookData } = await saveBook({
+        variables: { input: SavedBooks }
       });
 
            
