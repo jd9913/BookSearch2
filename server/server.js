@@ -7,6 +7,8 @@ const {authMiddleware} = require('./utils/auth');
 const db = require('./config/connection');
 
 
+require("dotenv").config({path: "./variables.env"});
+
 
 const PORT = process.env.PORT || 3001;
 const app = express();
