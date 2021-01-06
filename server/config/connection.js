@@ -8,7 +8,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/MyLibrary', {
   useCreateIndex: true,
   useFindAndModify: true,
 })
-.then(()=>console.log("DB Connected"))
+.then(()=>console.log("MongoDB Connected"))
 .catch(err=>console.error(err));
 
 module.exports = mongoose.connection;
