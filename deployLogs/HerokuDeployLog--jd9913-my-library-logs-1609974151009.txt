@@ -1,0 +1,45 @@
+2021-01-06T23:01:36.557469+00:00 app[web.1]: > if-env NODE_ENV=production && npm run start:prod || npm run start:dev
+2021-01-06T23:01:36.557469+00:00 app[web.1]: 
+2021-01-06T23:01:37.086491+00:00 app[web.1]: 
+2021-01-06T23:01:37.086508+00:00 app[web.1]: > my-library-search-app@1.0.0 start:prod /app
+2021-01-06T23:01:37.086524+00:00 app[web.1]: > cd server && npm start
+2021-01-06T23:01:37.086524+00:00 app[web.1]: 
+2021-01-06T23:01:37.524106+00:00 app[web.1]: 
+2021-01-06T23:01:37.524156+00:00 app[web.1]: > my-library-server@1.0.0 start /app/server
+2021-01-06T23:01:37.524157+00:00 app[web.1]: > node server.js
+2021-01-06T23:01:37.524158+00:00 app[web.1]: 
+2021-01-06T23:02:08.801174+00:00 app[web.1]: MongooseServerSelectionError: connect ECONNREFUSED 127.0.0.1:27017
+2021-01-06T23:02:08.801232+00:00 app[web.1]:     at NativeConnection.Connection.openUri (/app/server/node_modules/mongoose/lib/connection.js:832:32)
+2021-01-06T23:02:08.801234+00:00 app[web.1]:     at /app/server/node_modules/mongoose/lib/index.js:345:10
+2021-01-06T23:02:08.801235+00:00 app[web.1]:     at /app/server/node_modules/mongoose/lib/helpers/promiseOrCallback.js:31:5
+2021-01-06T23:02:08.801235+00:00 app[web.1]:     at new Promise (<anonymous>)
+2021-01-06T23:02:08.801236+00:00 app[web.1]:     at promiseOrCallback (/app/server/node_modules/mongoose/lib/helpers/promiseOrCallback.js:30:10)
+2021-01-06T23:02:08.801236+00:00 app[web.1]:     at Mongoose._promiseOrCallback (/app/server/node_modules/mongoose/lib/index.js:1135:10)
+2021-01-06T23:02:08.801237+00:00 app[web.1]:     at Mongoose.connect (/app/server/node_modules/mongoose/lib/index.js:344:20)
+2021-01-06T23:02:08.801237+00:00 app[web.1]:     at Object.<anonymous> (/app/server/config/connection.js:5:10)
+2021-01-06T23:02:08.801237+00:00 app[web.1]:     at Module._compile (internal/modules/cjs/loader.js:1063:30)
+2021-01-06T23:02:08.801238+00:00 app[web.1]:     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+2021-01-06T23:02:08.801239+00:00 app[web.1]:     at Module.load (internal/modules/cjs/loader.js:928:32)
+2021-01-06T23:02:08.801239+00:00 app[web.1]:     at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+2021-01-06T23:02:08.801239+00:00 app[web.1]:     at Module.require (internal/modules/cjs/loader.js:952:19)
+2021-01-06T23:02:08.801240+00:00 app[web.1]:     at require (internal/modules/cjs/helpers.js:88:18)
+2021-01-06T23:02:08.801240+00:00 app[web.1]:     at Object.<anonymous> (/app/server/server.js:7:12)
+2021-01-06T23:02:08.801241+00:00 app[web.1]:     at Module._compile (internal/modules/cjs/loader.js:1063:30) {
+2021-01-06T23:02:08.801241+00:00 app[web.1]:   reason: TopologyDescription {
+2021-01-06T23:02:08.801242+00:00 app[web.1]:     type: 'Unknown',
+2021-01-06T23:02:08.801242+00:00 app[web.1]:     setName: null,
+2021-01-06T23:02:08.801242+00:00 app[web.1]:     maxSetVersion: null,
+2021-01-06T23:02:08.801243+00:00 app[web.1]:     maxElectionId: null,
+2021-01-06T23:02:08.801243+00:00 app[web.1]:     servers: Map(1) { 'localhost:27017' => [ServerDescription] },
+2021-01-06T23:02:08.801244+00:00 app[web.1]:     stale: false,
+2021-01-06T23:02:08.801244+00:00 app[web.1]:     compatible: true,
+2021-01-06T23:02:08.801244+00:00 app[web.1]:     compatibilityError: null,
+2021-01-06T23:02:08.801245+00:00 app[web.1]:     logicalSessionTimeoutMinutes: null,
+2021-01-06T23:02:08.801245+00:00 app[web.1]:     heartbeatFrequencyMS: 10000,
+2021-01-06T23:02:08.801246+00:00 app[web.1]:     localThresholdMS: 15,
+2021-01-06T23:02:08.801246+00:00 app[web.1]:     commonWireVersion: null
+2021-01-06T23:02:08.801246+00:00 app[web.1]:   }
+2021-01-06T23:02:08.801250+00:00 app[web.1]: }
+2021-01-06T23:02:08.995436+00:00 heroku[web.1]: Process exited with status 0
+2021-01-06T23:02:09.218744+00:00 heroku[web.1]: State changed from starting to crashed
+2021-01-06T23:02:11.676545+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=jd9913-my-library.herokuapp.com request_id=943f5b32-1db0-466c-9655-1dd3bff657af fwd="156.42.184.101" dyno= connect= service= status=503 bytes= protocol=https
