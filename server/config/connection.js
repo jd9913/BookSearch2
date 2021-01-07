@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/MyLibrary', {
+mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost/MyLibrary', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
