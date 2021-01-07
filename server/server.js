@@ -11,9 +11,9 @@ require('dotenv').config({
   path: path.resolve('.env'),
 });
 
-console.log(process.env)
+const PORT = process.env.PORT || 4444;
 
-const PORT = process.env.PORT || 3001;
+
 const app = express();
 const server = new ApolloServer({ 
   typeDefs, 
