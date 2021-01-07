@@ -33,7 +33,7 @@ const SignupForm = () => {
       
     } catch (e) {
       console.error(e);
-      setShowAlert(true);
+      
     }
 
     setUserFormData({
@@ -97,7 +97,7 @@ const SignupForm = () => {
           Submit
         </Button>
       </Form>
-      {error && <div>Sign up failed</div>} 
+      {error && <div>Sign up failed</div>}
     </>
   );
 };
