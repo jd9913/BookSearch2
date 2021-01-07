@@ -11,4 +11,6 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/MyLibrary', {
 ).then(()=>console.log("MongoDB Connected"))
 .catch(err=>console.error(err));
 
+// console.dir(process.env.MONGODB_URI)
+
 module.exports = mongoose.connection;

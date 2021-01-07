@@ -7,9 +7,11 @@ const {authMiddleware} = require('./utils/auth');
 const db = require('./config/connection');
 
 
-require("dotenv").config({path: "./variables.env"});
+require('dotenv').config({
+  path: path.resolve('.env'),
+});
 
-
+console.log(process.env)
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -35,7 +37,7 @@ if (process.env.NODE_ENV === 'production') {
 
 db.once('open', () => {
   app.listen(PORT, () => {
-    console.log(`API server running on port ${PORT}!`);
+    console.log(`Server running on port ${PORT}!`);
     console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
   });
 });
