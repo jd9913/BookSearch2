@@ -1,6 +1,8 @@
 const express = require('express');
 const path = require('path');
 
+require("dotenv").config({ path: "variables.env" })
+
 
 //imports ApolloServer
 const { ApolloServer }=require('apollo-server-express');
@@ -14,7 +16,7 @@ const db = require('./config/connection');
 
 
 
-const PORT = process.env.PORT || 3301;
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 
