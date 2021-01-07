@@ -8,7 +8,6 @@ export const GET_USER = gql`
       email
       bookCount
       savedBooks {
-        # _id
         bookId
         authors
         image
