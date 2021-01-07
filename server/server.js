@@ -21,7 +21,8 @@ const server = new ApolloServer({
   context: authMiddleware 
 });
 
-server.applyMiddleware({ app });
+server.applyMiddleware({ app, path: '/graphql' });
+
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -34,6 +35,8 @@ if (process.env.NODE_ENV === 'production') {
 // app.get('*', (req, res) => {
 //   res.sendFile(path.join(__dirname, '../client/build'));
 // });
+app.set('port', PORT);
+console.log(PORT);
 
 db.once('open', () => {
   app.listen(PORT, () => {

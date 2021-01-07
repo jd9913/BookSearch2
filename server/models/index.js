@@ -2,4 +2,4 @@ const User = require('./User');
 
 
 
-module.exports = { User, bookSchema };
+module.exports = { User };
